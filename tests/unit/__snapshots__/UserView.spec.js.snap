@@ -3,6 +3,6 @@
 exports[`UserView renders the component 1`] = `
 <div>
   <v-user-search-form-stub></v-user-search-form-stub>
-  <v-user-profile-stub></v-user-profile-stub>
+  <v-user-profile-stub user="[object Object]"></v-user-profile-stub>
 </div>
 `;

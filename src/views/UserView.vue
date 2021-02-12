@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-user-search-form />
-    <v-user-profile />
+    <v-user-profile :user="user" />
   </div>
 </template>
 
@@ -14,6 +14,11 @@ export default {
   components: {
     VUserSearchForm,
     VUserProfile,
+  },
+  data() {
+    return {
+      user: { name: "" },
+    };
   },
 };
 </script>
