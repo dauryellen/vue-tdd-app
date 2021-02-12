@@ -43,5 +43,8 @@ describe("UserView", () => {
         name: "dauryellen",
       },
     });
+
+    //assert
+    expect(userProfile().vm.user).toBe(wrapper.vm.user);
   });
 });
