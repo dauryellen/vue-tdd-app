@@ -1,3 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserView renders the component 1`] = `<div>UserView</div>`;
+exports[`UserView renders the component 1`] = `
+<div>
+  <v-user-search-form-stub></v-user-search-form-stub>
+  <v-user-profile-stub></v-user-profile-stub>
+</div>
+`;

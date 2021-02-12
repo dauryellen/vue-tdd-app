@@ -15,11 +15,11 @@ describe("UserView", () => {
   it("renders main child components", () => {
     //arrange
     const wrapper = shallowMount(UserView);
-    const userSearchForm = wrapper.find(VUserSearchForm);
-    const userProfile = wrapper.find(VUserProfile);
+    const userSearchForm = wrapper.findComponent(VUserSearchForm);
+    const userProfile = wrapper.findComponent(VUserProfile);
 
     //assert
-    expext(userSearchForm.exists()).toBe(true);
-    expext(userProfile.exists()).toBe(true);
+    expect(userSearchForm.exists()).toBe(true);
+    expect(userProfile.exists()).toBe(true);
   });
 });
