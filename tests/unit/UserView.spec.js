@@ -4,9 +4,19 @@ import VUserSearchForm from "../../src/components/VUserSearchForm";
 import VUserProfile from "../../src/components/VUserProfile";
 
 describe("UserView", () => {
+  const build = () => {
+    const wrapper = shallowMount(UserView);
+
+    return {
+      wrapper,
+      userSearchForm: () => wrapper.findComponent(VUserSearchForm),
+      userProfile: () => wrapper.findComponent(VUserProfile),
+    };
+  };
+
   it("renders the component", () => {
     //arrange
-    const wrapper = shallowMount(UserView);
+    const { wrapper } = build();
 
     //assert
     expect(wrapper.html()).toMatchSnapshot();
@@ -14,12 +24,10 @@ describe("UserView", () => {
 
   it("renders main child components", () => {
     //arrange
-    const wrapper = shallowMount(UserView);
-    const userSearchForm = wrapper.findComponent(VUserSearchForm);
-    const userProfile = wrapper.findComponent(VUserProfile);
+    const { userSearchForm, userProfile } = build();
 
     //assert
-    expect(userSearchForm.exists()).toBe(true);
-    expect(userProfile.exists()).toBe(true);
+    expect(userSearchForm().exists()).toBe(true);
+    expect(userProfile().exists()).toBe(true);
   });
 });
